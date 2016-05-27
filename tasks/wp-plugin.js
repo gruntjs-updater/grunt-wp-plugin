@@ -103,7 +103,7 @@ module.exports = function( grunt ) {
 					del(['**'], { cwd: svnTrunkDir }, function( err ) {
 						grunt.log.warn( 'Plug-in trunk deleted.' );
 
-						cpy(['**'], svnTrunkDir, { cwd: deployDir }, function( err ) {
+						cpy(['**'], svnTrunkDir, { cwd: deployDir, parents: true }, function( err ) {
 							grunt.log.ok( 'Plug-in from deploy -> trunk copied.' );
 
 							if ( grunt.file.isDir( assetsDir ) ) {
